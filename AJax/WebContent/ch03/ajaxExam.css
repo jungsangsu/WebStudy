@@ -1,0 +1,12 @@
+@charset "UTF-8";
+div#displayArea{
+    width: 200px;
+    height: 200px;
+    border-color: aquamarine;
+    border-style: dotted;
+    background-color: beige;
+}
+td{
+    text-align: center;
+    color: coral;
+}

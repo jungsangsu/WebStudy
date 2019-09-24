@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form name="testAppInputForm" method="post">
+		<input type="text" name="name" placeholder="이름입력"> <input
+			type="text" name="yymmdd" placeholder="yyyy/mm/dd"> <input
+			type="button" value="보내기" onclick="testToServer()">
+	</form>
+</body>
+
+<script type="text/javascript">
+	var xhr = null;
+
+	function testToServer() {
+		name = encodeURIComponent(document.testAppInputForm.name.value);
+		yymmdd = document.testAppInputForm.yymmdd.value;
+
+		xhr = new XMLHttpRequest();
+		xhr.onreadystatechange = testFromServer; //서버로 부터 응답이 온다면
+
+		xhr.open("POST", "test.jsp", true); //요청
+		xhr.setRequestHeader("Content-Type",
+				"application/x-www-form-urlencoded");
+		xhr.send("name=" + name + "&yymmdd=" + yymmdd);
+	}
+
+	function testFromServer() {
+		if (xhr.readyState == 4) {
+			if (xhr.status == 200) {
+				alert(xhr.responseText);
+			}
+		}
+
+	}
+</script>
+</html>

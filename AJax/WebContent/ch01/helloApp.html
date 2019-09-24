@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<form name="inputForm" method="post">
+	<input type="text" name="name">
+	<input type="button" value="입력" onclick="helloToServer()" />
+</form>
+</body>
+
+<script type="text/javascript">
+var xhr=null;
+function helloToServer(){
+	name = encodeURIComponent(document.inputForm.name.value);
+	
+	xhr = new XMLHttpRequest();
+	xhr.onreadystatechange = helloFromServer;
+	
+	xhr.open("POST","hello.jsp",true);
+	xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+	xhr.send("name="+name);
+	
+}
+
+function helloFromServer(){
+	if(xhr.readyState==4){
+		if(xhr.status==200){
+			alert(xhr.responseText);
+		}
+	}
+	
+}
+</script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

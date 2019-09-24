@@ -1,0 +1,8 @@
+#displayArea{
+/* 	visibility: hidden;  */
+	width: 250px;
+    height: 250px;
+    border-color: #6699ff;
+    border-style: double;
+/*     display:none; */
+}

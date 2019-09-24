@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+최고 4일간 온도는 <span id="temp" style="text-align: Center red" ></span>
+</body>
+
+
+<script type="text/javascript">
+window.onload = function(){
+	loadList();	
+}
+
+function loadList(){
+	xhr = new XMLHttpRequest();
+	xhr.onreadystatechange = loadedList;
+	xhr.open("GET","getMaxTemperature.jsp",true);
+	xhr.send(null);
+
+}
+
+function loadedList(){
+	if(xhr.readyState==4){
+		if(xhr.status==200){
+			var csvStr = xhr.responseText;
+			var temperatureStrs = csvStr.split(",");
+			
+			var temperatures = new Array(temperatureStrs.length);
+			
+			for ( var i = 0; i < temperatureStrs.length; i++) {
+				temperatures[i] = parseFloat(temperatureStrs[i]);
+			}
+			
+			var max = temperatures[0];
+			for(var i =0;i<temperatures.length;i++){
+				if(max<temperatures[i]) max = temperatures[i];
+			}
+			
+			var maxtemp = document.getElementById("temp");
+			maxtemp.innerHTML = "<strong>"+max+"</strong>"
+		
+		}
+	}
+}
+
+</script>
+</html>

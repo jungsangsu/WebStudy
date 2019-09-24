@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<curriculum>
+	<subject>
+		<codeNumber>
+			A101
+		</codeNumber>
+		<titleName>
+			XML
+		</titleName>
+		<roomNumber>
+			301
+		</roomNumber>
+	</subject>
+
+	<subject>
+		<codeNumber>
+			A103
+		</codeNumber>
+		<titleName>
+			JSP
+		</titleName>
+		<roomNumber>
+			302
+		</roomNumber>
+	</subject>
+
+	<subject>
+		<codeNumber>
+			A109
+		</codeNumber>
+		<titleName>
+			Ajax
+		</titleName>
+		<roomNumber>
+			301
+		</roomNumber>
+	</subject>
+
+	<subject>
+		<codeNumber>
+			A001
+		</codeNumber>
+		<titleName>
+			자바
+		</titleName>
+		<roomNumber>
+			302
+		</roomNumber>
+	</subject>
+
+	<subject>
+		<codeNumber>
+			A002
+		</codeNumber>
+		<titleName>
+			String
+		</titleName>
+		<roomNumber>
+			303
+		</roomNumber>
+	</subject>
+</curriculum>
