@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<button id="btn1">slideUp</button>
+	<button id="btn2">slideDown</button>
+	&nbsp;&nbsp;&nbsp;
+
+	<button id="btn3">fadeIN</button>
+	<button id="btn4">facdOut</button>
+	&nbsp;&nbsp;&nbsp;
+
+	<button id="btn5">side toggle</button>
+	<button id="btn6">fade toggle</button>
+	<button id="btn7">toggle</button>
+
+	<p>이미지</p>
+	<img src="../img/어쌤블.gif" height="300" width="400">
+	<p>END</p>
+</body>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#btn1').click(function() {
+			$('img').slideUp(1000);
+		});
+		
+		$('#btn2').click(function() {
+			$('img').slideDown(1000);
+		});
+				
+		$('#btn3').click(function(){
+			$('img').fadeIn(1000);
+		});
+		
+		$('#btn4').click(function(){
+			$('img').fadeOut(1000);
+		});
+		
+		$('#btn5').click(function(){
+			$('img').slideToggle(1000);
+		});
+		
+		$('#btn6').click(function(){
+			$('img').fadeToggle(1000);
+		});
+		
+		$('#btn7').click(function(){
+			$('img').toggle(1000);
+		});
+	});
+</script>
+
+</html>

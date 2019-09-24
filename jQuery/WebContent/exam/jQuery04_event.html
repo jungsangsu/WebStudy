@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+    #disp{
+        font: bold;
+        color:blueviolet;
+    }
+</style>
+</head>
+<body>
+
+	<input type="text" id="name" value="">
+	<p id="disp">
+		<strong>값을 바꿔보세요</strong>
+	</p>
+	<input type="button" id="btn" value="버튼">
+
+</body>
+<script type="text/javascript" src="../js/jquery.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#btn').click(function() {
+			/* document.getElementById("name").value = "홍길동"; */
+			/* $('#name').val("홍길동"); */
+			
+			/* var text = document.getElementById('disp').innerText; */
+			/* var text = $('#disp').text();
+			alert(text); */
+	
+			/* var html = $('#disp').html();
+			alert(html); */
+		
+			var text = "Have a nice day";
+			/* $('#disp').text(text); */
+			$('#disp').html("<b style=color:red;>"+text+"</b>");
+		});
+	});
+</script>
+
+</html>

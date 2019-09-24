@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+.back {
+	background-color: aquamarine;
+}
+</style>
+
+</head>
+<body>
+	<h1 class="back">Hello jQuery</h1>
+	<button id="hellobtn">헬로우 제이쿼리</button>
+
+</body>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('.back').addClass('backColor');
+
+		$('#hellobtn').click(function() {
+
+			$(this).hide();
+			alert("jquery 연습");
+			$(this).show();
+		});
+
+		$('#hellobtn').click(function() {
+			/* 			$(this).hide(function(){
+			 alert("hide");
+			 }).show(function(){
+			 alert("show");
+			 }); */
+			$(this).hide(100, function() {
+				alert("jQuery 연습!!");
+			}).show(function() {
+			});
+
+		});
+	}); /* window.onload와 같은 의미이다. */
+</script>
+
+</html>
