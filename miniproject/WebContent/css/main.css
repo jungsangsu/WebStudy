@@ -1,0 +1,46 @@
+@charset "UTF-8";
+
+#nav{
+    font-size: 1rem;
+	font-weight: bold;
+    font-align: right;
+    font-family: HY견고딕, "Times New Roman", serif;
+    color: bisque;
+}
+
+#bodyTable {
+	background-color: #F5F5DC;
+	margin-left: auto;
+	margin-right: auto;
+
+}
+
+#logoTitle {
+	font-size: 2rem;
+	font-weight: bold;
+	font-align: justify;
+	font-family: 굴림, "Times New Roman", serif;
+}
+
+body {
+	background-image: url('../img/배경.jpg');
+	position: relative;
+    top:50px;
+}
+
+header, nav, section, article, aside, footer {
+	display: block;
+	width: 800px;
+	margin: 4px;
+	padding: 4px;
+	background-color: #F5F5DC;
+	text-align: center;
+}
+
+section {
+	width: 600px;
+}
+
+nav {
+	width: 200px;
+}

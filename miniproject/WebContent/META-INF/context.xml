@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context docBase="miniproject" path="miniproject" reloadable="true"
+	source="org.eclipse.jst.jee.server:miniproject">
+	<Resource 
+	name="jdbc/oracle" 
+	type="javax.sql.DataSource" 
+	driverClassName="oracle.jdbc.driver.OracleDriver" 
+	url="jdbc:oracle:thin:@localhost:1521:xe"
+	username="java"
+	password="tkdtn" 
+	maxActive="20" 
+	maxIdle="3" 
+	removeAbandoned="true" />
+
+</Context>

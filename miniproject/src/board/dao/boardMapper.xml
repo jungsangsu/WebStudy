@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="boardSQL">
+	<!-- 글쓰기 -->
+	<insert id="boardWrite" parameterType="board">
+		insert into
+		board(seq,id,name,email,subject,content,ref)
+		values(seq_board.nextval,#{id},#{name},#{email},#{subject},#{content},seq_board.currval)
+	</insert>
+
+	<!-- 목록 -->
+	<select id="boardList" parameterType="java.util.Map"
+		resultType="board">
+		<!-- select * from (select rownum rn, tt.* from (select seq,id,name,email,subject,content, 
+			ref,lev,step,pseq,reply,hit, to_char(logtime, 'YYYY.MM.DD') as logtime from 
+			board order by ref desc, step asc)tt )where rn between #{startNum} and #{endNum} -->
+		
+		<![CDATA[
+			select * from
+			(select rownum rn, tt.* from
+			(select seq,id,name,email,subject,content,
+			        ref,lev,step,pseq,reply,hit, 
+			        to_char(logtime, 'YYYY.MM.DD') as logtime from board order by 7 desc, step asc)tt 
+			)where rn>=#{startNum} and rn<=#{endNum}
+		]]>
+
+	</select>
+
+	<select id="getTotalA" resultType="int">
+		select count(*) from board
+	</select>
+
+	<select id="getSearch" parameterType="java.util.Map" resultType="int">
+		select
+		count(*) from board where ${option} like '%'||#{keyword}||'%'
+	</select>
+
+
+	<select id="getboard" parameterType="int" resultType="board">
+		select *
+		from board where seq = #{seq}
+	</select>
+
+	<update id="boardUpdate" parameterType="java.util.Map">
+		update board set subject
+		=#{subject}, content=#{content}, logtime = sysdate where seq=#{seq}
+	</update>
+
+	<!-- 조회수 -->
+	<update id="boardHit" parameterType="int">
+		update board set hit=hit+1 where seq=#{seq}
+	</update>
+
+
+	<select id="boardSearchList" parameterType="java.util.Map"
+		resultType="board">
+		<!-- select * from
+		(select rownum rn, tt.* from
+		(select seq,id,name,email,subject,content,
+		        ref,lev,step,pseq,reply,hit, 
+		        to_char(logtime, 'YYYY.MM.DD') as logtime from board order by ref desc, step asc)tt 
+		)where rn between #{startNum} and #{endNum} -->
+		
+		<![CDATA[
+			select * from
+			(select rownum rn, tt.* from
+			(select seq,id,name,email,subject,content,
+			        ref,lev,step,pseq,reply,hit, 
+			        to_char(logtime, 'YYYY.MM.DD') as logtime from board where ${option} like '%'||#{keyword}||'%' order by 7 desc, step asc)tt 
+			)where rn>=#{startNum} and rn<=#{endNum}
+		]]>
+
+	</select>
+
+	<!-- 답글 -->
+	<update id="boardReply1" parameterType="board">
+		update board set step=step+1 where ref=#{ref} and step>#{step}
+	</update>
+	<insert id="boardReply2" parameterType="board">
+		insert into board values(seq_board.nextval
+							    ,#{id}
+							    ,#{name}
+							    ,#{email}
+							    ,#{subject}
+							    ,#{content}
+							    ,#{ref}
+							    ,#{lev}
+							    ,#{step}
+							    ,#{pseq}
+							    ,0 <!-- 답글수 -->
+							    ,0 <!-- 조회수 -->
+							    ,sysdate)
+	</insert>
+	<update id="boardReply3" parameterType="int">
+		update board set reply=reply+1 where seq=#{pseq}
+	</update>
+	
+	<!-- 삭제 -->
+	<update id="boardDelete1" parameterType="int">
+		update board set REPLY=REPLY-1 where seq=#{pseq}
+	</update>
+
+	<update id="boardDelete2" parameterType="int">
+		update board set subject='[글이 삭제된 답글]'||subject where pseq=#{seq}
+	</update>
+	
+	<delete id="boardDelete3" parameterType="int" >
+		delete board where seq=#{seq}
+	</delete>
+
+</mapper>

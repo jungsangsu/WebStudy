@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="memberSQL">
+
+	<resultMap type="zipcode" id="getZipList">
+		<result property="sido" column="sido" />
+		<result property="sigungu" column="sigungu" />
+		<result property="roadname" column="roadname" />
+	</resultMap>
+
+
+	<insert id="write" parameterType="member">
+		insert into member
+		values(#{name},#{id},#{pwd},#{gender},#{email1},#{email2},#{tel1},#{tel2},#{tel3},#{zipcode},#{addr1},#{addr2},sysdate)
+	</insert>
+
+	<select id="getMember" parameterType="String"
+		resultType="member">
+		select * from member where id = #{id}
+	</select>
+
+	<select id="select" parameterType="member" resultType="member">
+		select *
+		from member where id = #{id} and pwd = #{pwd}
+	</select>
+
+	<select id="getZipList" resultMap="getZipList">
+		select * from newzipcode where
+		sido like '%'||#{sido}||'%' and nvl(sigungu,'0') like
+		'%'||#{sigungu}||'%' and roadname like '%'||#{roadname}||'%'
+	</select>
+
+	<update id="update" parameterType="member">
+
+		update member set name =
+		#{name}, id =#{id},pwd =#{pwd}, gender = #{gender},
+		email1=#{email1},
+		email2=#{email2}, tel1=#{tel1}, tel2=#{tel2},tel3=#{tel3},
+		zipcode
+		=#{zipcode},addr1=#{addr1},addr2=#{addr2},logtime=sysdate where id =
+		#{id}
+
+	</update>
+
+
+</mapper>

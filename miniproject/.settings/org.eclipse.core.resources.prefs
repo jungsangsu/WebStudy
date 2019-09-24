@@ -1,0 +1,5 @@
+eclipse.preferences.version=1
+encoding//WebContent/WEB-INF/command.properties=UTF-8
+encoding//src/board/bean/BoardPaging.java=UTF-8
+encoding//src/imageboard/bean/ImageboardPaging.java=UTF-8
+encoding//src/member/dao/MemberDAO.java=UTF-8
