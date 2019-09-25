@@ -1,0 +1,24 @@
+<!-- 한글처리 : UTF-8 -->
+<h2>jQuery신기한 로딩</h2>
+<table>
+	<tr id="key">
+		<th>이름</th>
+		<th>나이</th>
+		<th>주소</th>
+	</tr>
+	<tr class="value">
+		<td>홍길동</td>
+		<td>22</td>
+		<td>서울</td>
+	</tr>
+	<tr class="value">
+		<td>코난</td>
+		<td>25</td>
+		<td>부산</td>
+	</tr>
+	<tr class="value">
+		<td>둘리</td>
+		<td>22</td>
+		<td>제주</td>
+	</tr>
+</table>

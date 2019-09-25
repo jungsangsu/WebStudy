@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+body * :not(a) {
+	color: red;
+}
+</style>
+</head>
+<body>
+	<div id="container">
+		<ul class="tab">
+			<li><a href="#tab1" class="selected">Javascript</a></li>
+			<li><a href="#tab2">CSS</a></li>
+			<li><a href="#tab3">HTML</a></li>
+			<li><a href="#tab4">jQuery</a></li>
+			<li><a href="#tab5">XHTML</a></li>
+		</ul>
+
+		<ul class="panel">
+			<li id="tab1">Javascript를 선택하셨네요</li>
+			<li id="tab2">CSS를 선택하셨네요</li>
+			<li id="tab3">HTML를 선택하셨네요</li>
+			<li id="tab4">jQuery를 선택하셨네요</li>
+			<li id="tab5">XHTML를 선택하셨네요</li>
+		</ul>
+
+	</div>
+</body>
+
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+	$(document).ready(
+			function() {
+				/* var tag1 = $('ul.tab li a.selected').attr('href');
+				alert(tag1); */
+
+				/*tab1를 제외하고 모두 숨겨라*/
+				$('ul.panel li:not('+ $('ul.tab li a.selected').attr('href') + ')').hide();
+
+				/*a태그를 클릭했을 때*/
+				$('ul.tab li a').click(function() {
+					/*a에 있는 모든 클래스의 속성 selected를 제거*/
+					$('a').removeAttr("class", "selected");
+
+					/*선택한 요소에 클래스 속성  selected를 추가*/
+					$(this).attr("class", "selected");
+
+					/*panel의 li를 모두 hide*/
+					$('ul.panel li').hide();
+
+					/*선택한 href의 값의 id를 찾아서 표시 */
+					/*alert($(this).attr('href'));*/
+                    $('ul.panel li'+$(this).attr('href')).show();    
+                });
+			});
+</script>
+
+</html>

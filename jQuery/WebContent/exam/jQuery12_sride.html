@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <style>
+        #button{
+            margin: 0;
+            background: #ccc;
+            padding: 10px;
+            cursor: pointer;
+        }
+        #info p{
+            font-size: 15px;
+            color:coral;
+        }
+        #info{
+        	overflow: scroll;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="button">button</h1>
+    <div id="info">
+        <p>button을 클릭하면 info부분을 보여줍니다... 보여주는 방식은 sideToggle입니다</p>
+        <p>button을 클릭하면 info부분을 보여줍니다... 보여주는 방식은 sideToggle입니다</p>
+        <p>button을 클릭하면 info부분을 보여줍니다... 보여주는 방식은 sideToggle입니다</p>
+        <p>button을 클릭하면 info부분을 보여줍니다... 보여주는 방식은 sideToggle입니다</p>
+        <p>button을 클릭하면 info부분을 보여줍니다... 보여주는 방식은 sideToggle입니다</p>
+        <p>button을 클릭하면 info부분을 보여줍니다... 보여주는 방식은 sideToggle입니다</p>
+        <p>button을 클릭하면 info부분을 보여줍니다... 보여주는 방식은 sideToggle입니다</p>
+        <p>button을 클릭하면 info부분을 보여줍니다... 보여주는 방식은 sideToggle입니다</p>
+        <p>button을 클릭하면 info부분을 보여줍니다... 보여주는 방식은 sideToggle입니다</p>
+        <p>button을 클릭하면 info부분을 보여줍니다... 보여주는 방식은 sideToggle입니다</p>
+    </div>
+</body>
+
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+        $('info').hide();
+        $('#button').click(function(){
+            $('#info').slideToggle(); 
+        });
+    });
+</script>
+
+</html>

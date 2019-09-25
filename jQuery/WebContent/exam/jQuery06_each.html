@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <style type="text/css">
+        .container{
+            position: absolute;
+            top: 10px;
+            left: 100px;
+            height: 300px;
+            width: 600px;
+            border: 1px dotted red;
+            font-size: 10px;
+        }
+    </style>
+</head>
+<body>
+    <a id="welcome" href="javascript:void(0)">처음화면</a><br><br>
+    <a id="sample" href="#">샘플화면</a> <!--이동은 안하는데 주소 URL에 남음-->
+    
+    <div id="result" class="container" style="font-size: 20px;"></div>
+    <div></div>
+</body>
+
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		result.innerText = "왼쪽 메뉴를 선택하세요";
+	
+        $('#welcome').click(function(){
+            $('#result').html("<p style='font-size:50px; color:red;'>Welcome jQuery</p>")
+        });
+        
+        $('#sample').click(function(){
+        	$('#result').removeAttr("style");
+        });
+        
+    });
+</script>
+
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+body {
+  margin: 0px;
+  padding: 0px;
+}
+.jbTitle {
+  text-align: center;
+}
+
+.jbMenu {
+  text-align: center;
+  background-color: yellow;
+  padding: 10px 0px; 
+  width: 100%;
+}
+.jbContent {
+  height: 2000px;
+  border: 1px solid red;
+}
+.jbFixed {
+  position: fixed;
+  top: 0px;
+  /* margin-top: -100px;
+  padding-bottom: 100px; */
+}
+</style>
+</head>
+<body>
+
+<div class="jbTitle">
+	<h1>Site Title</h1>
+</div>
+
+<div class="jbMenu">
+	<p>
+		First Menu
+		Second Menu
+		Third Menu
+		Fourth Menu
+	</p>
+</div>
+
+<div class="jbContent">
+가나다<br>
+123<br>
+ABC<br>
+가나다<br>
+123<br>
+ABC<br>
+가나다<br>
+123<br>
+ABC<br>
+</div>
+
+</body>
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+$(function() {
+    var $jbMenu = $('.jbMenu'),
+        $jbContent = $('.jbContent');
+
+    var posY = $jbMenu.offset().top;
+
+    $(window).scroll(function(e) {
+        var top = $(document).scrollTop();
+        if (posY < top) {
+            $jbContent.css({ marginTop: $jbMenu.outerHeight(true) });
+            $jbMenu.addClass('jbFixed');
+        } else {
+            $jbContent.css({ marginTop: "0" });
+            $jbMenu.removeClass('jbFixed');
+        }
+    });
+});
+
+
+
+/*
+$(document).ready(function(){
+	var jboffset = $('.jbMenu').offset();
+	
+	$(window).scroll(function(){
+		if($(document).scrollTop() > jboffset.top)
+			$('.jbMenu').addClass('jbFixed');
+		else
+			$('.jbMenu').removeClass('jbFixed');
+	});
+});
+*/
+</script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

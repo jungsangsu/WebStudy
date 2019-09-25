@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+</head>
+<body>
+    <select id="animal">
+        <option>lion</option>
+        <option>bear</option>
+        <option>elephant</option>
+        <option>giraffe</option>
+        <option>tiger</option>
+    </select>
+    <select onchange="go()">
+        <option>apple</option>
+        <option>orange</option>
+        <option>strawberry</option>
+        <option>melon</option>
+        <option>kiwi</option>
+    </select>
+    
+    <br><br>
+    <div id="output"></div>
+</body>
+
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+       $('#animal').change(function(){
+            var value = $('select#animal > option:selected').val();
+           $('#output').text(value+"를 선택").css('color','blue');
+       });
+    });
+</script>
+<script type="text/javascript">
+    function go(){
+        var value = $('select:eq(1) > option:selected').val();
+        $('#output').text(value+"를 선택").css('color','red');
+    }
+</script>
+
+</html>

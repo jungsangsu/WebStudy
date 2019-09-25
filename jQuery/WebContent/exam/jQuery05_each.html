@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <style>
+        p{
+            color: coral;
+        }
+    </style>
+</head>
+<body>
+    <p>빨강</p>
+    <p>초록</p>
+    <p>파랑</p>
+    <p>보라</p>
+
+</body>
+
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		var i = 0;
+        $('p').each(function(){ /* each는 if문같이 */
+           $(this).addClass('s'+i); 
+            i=i+1;
+            if(i==3) return false;
+        });
+	});
+</script>
+
+</html>
