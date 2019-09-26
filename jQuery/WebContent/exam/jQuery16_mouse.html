@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+</head>
+<body>
+<img src="../img/%EB%AC%B5%EA%B3%A0%EB%8D%94%EB%B8%94%EB%A1%9C%EA%B0%80.jpg" width="200" height="200">
+</body>
+
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+        $('img').mouseover(function(){
+            $(this).attr('src','../img/찍어.gif');
+        }).mouseout(function(){
+            $(this).attr('src','../img/켁.gif');
+        })
+    });
+</script>
+
+</html>

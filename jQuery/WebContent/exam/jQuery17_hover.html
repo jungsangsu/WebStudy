@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <style>
+        p{
+            margin: 9px;
+            font-size: 16px;
+            color: brown;
+        }
+        .highlight{
+        	background-color: aquamarine;
+            color: red;
+        }
+    </style>
+           
+</head>
+<body>
+    <p>JAVA</p>
+    <p>jQuery</p>
+    <p>Ajax</p>
+    
+</body>
+
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+        $('p').hover(function(){
+            $(this).addClass('highlight');
+        }, function(){
+            $(this).removeClass('highlight');
+        });
+    });
+</script>
+
+</html>

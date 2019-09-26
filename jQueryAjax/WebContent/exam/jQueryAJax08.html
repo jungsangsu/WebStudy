@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<form id="loginForm">
+<table border="1" cellpadding="3" cellspacing="0">
+<tr>
+	<td align="center">아이디</td>
+	<td>
+		<input type="text" name="id" id="id" size="25">
+		<div id="idDiv"></div>
+	</td>
+</tr>
+
+<tr>
+	<td align="center">비밀번호</td>
+	<td>
+		<input type="password" name="pwd" id="pwd" size="30">
+		<div id="pwdDiv"></div>
+	</td>
+</tr>
+
+<tr>
+	<td align="center" colspan="2">
+		<input type="button" id="loginBtn" value="로그인">
+		<div id="loginResult"></div>
+	</td>
+</tr>
+</table>
+</form>
+</body>
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$('#id').keyup(function(){
+       $('#loginResult').empty(); 
+    });
+	
+	$('#loginBtn').click(function(){
+		$('#idDiv').empty();
+		$('#pwdDiv').empty();
+		
+		var id = $('#id').val();
+		var pwd = $('#pwd').val();
+		
+		if(id=='')
+			$('#idDiv').text("아이디을 입력하세요").css('color','red').css('font-size','8pt');
+		else if(pwd=='')
+			$('#pwdDiv').text("비밀번호를 입력하세요").css('color','red').css('font-size','8pt');
+		else
+/* 			$.getJSON('jQueryAJax08_json.jsp',
+					  $('#loginForm').serialize(),//'id='+id+'&pwd='+pwd,
+					  function(data){
+				if(data.result=='ok'){
+					$('#loginResult').text("로그인 성공").css('color','blue').css('font-size','8pt');
+				
+				}else if(data.result=='fail'){
+					$('#loginResult').text("로그인 실패");
+					$('#loginResult').css('color','red');
+					$('#loginResult').css('font-size','8pt');
+                    
+                    $('#loginForm')[0].reset();
+                    $('#id').focus();
+				}
+			}); */
+            $.ajax({
+               type:'post',
+                url:'jQueryAJax08_json.jsp',
+                data: $('#loginForm').serialize(),
+                dataType:'json',
+                success:function(data){
+                	if(data.result=='ok'){
+                		$('#loginResult').text("로그인 성공").css('color','blue').css('font-size','8pt');	
+                	}else if(data.result=='fail'){
+                		 $('#loginResult').text("로그인 실패");
+     					$('#loginResult').css('color','red');
+     					$('#loginResult').css('font-size','8pt');
+                         
+                         $('#loginForm')[0].reset();
+                         $('#id').focus();
+                	}
+                },
+                error : function(){
+                   alert("error");
+                }
+                
+            });
+	});
+});
+</script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,7 @@
+[{"name":"hong",  "addr":"seoul"},
+
+{"name":"lee",  "addr":"busan"},
+
+{"name":"park",  "addr":"daegu"},
+
+{"name":"홍",  "addr":"제주"}]

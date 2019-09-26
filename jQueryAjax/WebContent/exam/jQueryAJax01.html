@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+    <div id="dataArea"></div>
+</body>
+
+<script type="text/javascript"
+	src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$.ajax({
+            type :'get',
+            url:'jQueryAJax01_data.jsp',
+            /* data: 'type=25', */
+            data : {'type':25},
+            dataType:'text',
+            success : function(result){
+                $('#dataArea').text(result);
+            },
+            error : function(){
+                alert("실패");
+            }
+        });
+	});
+</script>
+</html>

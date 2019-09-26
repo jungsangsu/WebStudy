@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<p>키보드 이벤트 발생</p>
+	<h1>0/50</h1>
+	<textarea rows="5" cols="70"></textarea>
+</body>
+
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('textarea').keypress(function() {
+			var len = $(this).val().length;
+
+			$('h1').html(len + '/50');
+			if (len > 50)
+				$('h1').css('color', 'red');
+			else
+				$('h1').css('color', 'blue');
+		});
+	});
+</script>
+
+</html>
+<!-- keydown : 키보드가 눌러지는 순간 발생 , 특수키 인식, 대소문자 구별x
+keypress : 글자가 입력될 때 발생 , 한글X 특수키 인식 X 컨트롤 쉬프트 알트 대소문자 구별
+Keyup : 입력후 손가락이 떼어질때 발생 keydown과 같다 -->
