@@ -1,0 +1,6 @@
+@charset "UTF-8";
+
+.jbFixed {
+  position: fixed;
+  top: 0px;
+}

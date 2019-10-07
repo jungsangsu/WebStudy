@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="memberSQL">
+
+
+	<insert id="write" parameterType="member">
+		insert into member
+		values(#{name},#{id},#{pwd},#{gender},#{email1},#{email2},#{tel1},#{tel2},#{tel3},#{zipcode},#{addr1},#{addr2},sysdate,null,null)
+	</insert>
+
+	<select id="getMember" parameterType="java.lang.String"
+		resultType="member">
+		select * from member where id = #{id}
+	</select>
+
+	<select id="select" parameterType="member" resultType="member">
+		select *
+		from member where id = #{id} and pwd = #{pwd}
+	</select>
+
+
+	<update id="update" parameterType="member">
+
+		update member set name =
+		#{name}, id =#{id},pwd =#{pwd}, gender = #{gender},
+		email1=#{email1},
+		email2=#{email2}, tel1=#{tel1}, tel2=#{tel2},tel3=#{tel3},
+		zipcode
+		=#{zipcode},addr1=#{addr1},addr2=#{addr2},logtime=sysdate where id =
+		#{id}
+
+	</update>
+	<update id="applysession" parameterType="member">
+		update member set
+		sessionKey = #{sessionkey}, sessionLimit = #{sessionlimit} where
+		id=#{id}
+	</update>
+
+	<select id="sessionToDTO" parameterType="String"
+		resultType="member">
+		select * from member where sessionKey = #{sessionKey} and
+		sessionLimit > sysdate
+	</select>
+
+	<update id="sessionClear" parameterType="String">
+		update member set
+		sessionLimit = sysdate where
+		sessionKey = #{sessionkey}
+	</update>
+
+</mapper>
