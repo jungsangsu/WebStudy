@@ -1,0 +1,14 @@
+package user.action;
+
+import java.util.Scanner;
+
+public class UserInsertService implements UserService {
+
+	@Override
+	public void execute() {
+		Scanner input = new Scanner(System.in);
+		
+		//데이터
+	}
+
+}

@@ -1,0 +1,26 @@
+package user.main;
+
+import java.util.Scanner;
+
+public class HelloSpring {
+
+	public void meue() {
+		Scanner input = new Scanner(System.in);
+
+		System.out.println("*************");
+		System.out.println("   1.입력");
+		System.out.println("   2.수정");
+		System.out.println("   3.삭제");
+		System.out.println("   4.출력");
+		System.out.println("   5.정렬");
+		System.out.println("   6.종료");
+		System.out.println("*************");
+		System.out.print("입력번호 : ");
+		
+		int number = 
+	}
+
+	public static void main(String[] args) {
+
+	}
+}

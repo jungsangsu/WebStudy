@@ -1,0 +1,24 @@
+package sample05;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.stereotype.Component;
+
+import sample05.SungJuk;
+
+@Component
+public class SungJukInput implements SungJuk {
+
+	@Override
+	public void execute(ArrayList<SungJukDTO2> list) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+
+}

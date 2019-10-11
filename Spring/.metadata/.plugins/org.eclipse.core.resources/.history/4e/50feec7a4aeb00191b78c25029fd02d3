@@ -1,0 +1,14 @@
+package HackSa;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
+
+@ComponentScan("com.conf")
+public class ManagementModifyStudent implements Management {
+
+	@Override
+	public void execute(ApplicationContext context) {
+
+	}
+
+}

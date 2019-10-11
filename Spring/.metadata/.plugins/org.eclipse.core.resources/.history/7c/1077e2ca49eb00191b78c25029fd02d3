@@ -1,0 +1,12 @@
+package HackSa;
+
+import org.springframework.context.ApplicationContext;
+
+public class ManagementDeleteStudent implements Management {
+
+	@Override
+	public void execute(ApplicationContext context) {
+
+	}
+
+}

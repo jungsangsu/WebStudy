@@ -1,0 +1,26 @@
+package sample01;
+
+import lombok.Setter;
+
+@Setter
+public class MessageBeanImpl implements MessageBean {
+
+	private String str;
+	
+	
+	@Override
+	public void showPrintBefore() {
+		
+	}
+
+	@Override
+	public void viewPrintBefore() {
+		
+	}
+
+	@Override
+	public void display() {
+		
+	}
+
+}

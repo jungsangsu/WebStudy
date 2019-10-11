@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+	<!-- sample01 -->
+	<context:component-scan base-package="sample01" />
+
+	<!-- sample02 -->
+	<context:component-scan base-package="sample02" />
+
+	<!-- sample03 -->
+	<!-- <bean id="sungjukDTO" class="sample03.SungJukDTO"> <constructor-arg 
+		value="홍길동"/> <constructor-arg value="97"/> <constructor-arg value="100"/> 
+		<constructor-arg value="95"/> <property name="name" value="홍길동"/> <property 
+		name="kor" value="97"/> <property name="eng" value="100"/> <property name="math" 
+		value="95"/> </bean> <bean id="sungjukimpl" class="sample03.SungJukImpl"> 
+		<constructor-arg> <ref bean="sungjukDTO"/> </constructor-arg> </bean> -->
+
+	<!-- conf -->
+	<context:component-scan base-package="com.conf" />
+
+
+
+
+	<!-- sample05 -->
+	<bean id="helloSpring" class="sample05.HelloSpring">
+	</bean>
+
+	<bean id="sungJukInput" class="sample05.SungJukInput">
+		<property name="sungJukDTO2" ref="sungJukDTO2"/>
+	</bean>
+	<bean id="sungJukDelete" class="sample05.SungJukDelete" />
+	<bean id="sungJukModify" class="sample05.SungJukModify" />
+	<bean id="sungJukOutput" class="sample05.SungJukOutput" />
+	
+	<bean id="sungJukDTO2" class="sample05.SungJukDTO2" scope="prototype"/>
+
+
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

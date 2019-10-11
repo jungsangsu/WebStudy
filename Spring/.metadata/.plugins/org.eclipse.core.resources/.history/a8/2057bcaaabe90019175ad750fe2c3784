@@ -1,0 +1,30 @@
+package com.conf;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import sample03.SungJukDTO;
+import sample03.SungJukImpl;
+
+@Configuration
+public class Instance {
+	
+	@Bean(name="sungJukImpl")
+	public SungJukImpl getSungJukImpl(){
+		return new SungJukImpl();
+	}
+	
+	@Bean(name="sungJukDTO")
+	public SungJukDTO getSungJukDTO(){
+		return new SungJukDTO();
+	}
+}
+
+
+
+
+
+
+
+
+

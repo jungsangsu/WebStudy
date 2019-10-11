@@ -1,0 +1,33 @@
+package sample01;
+
+import lombok.Data;
+import lombok.Setter;
+
+@Data
+public class MessageBeanImpl implements MessageBean {
+	
+	@Setter
+	private String str;
+	
+	
+	@Override
+	public void showPrintBefore() {
+		System.out.println("showPrintBefore 메세지 ="+str);
+	}
+
+	@Override
+	public void viewPrintBefore() {
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		System.out.println("viewPrintBefore 메세지 = "+str);
+	}
+
+	@Override
+	public void display() {
+		System.out.println("showPrintAfter 메세지 ="+str);
+	}
+
+}

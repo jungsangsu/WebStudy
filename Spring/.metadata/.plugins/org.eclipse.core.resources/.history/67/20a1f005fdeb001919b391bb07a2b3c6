@@ -1,0 +1,49 @@
+package user.main;
+
+import java.util.Scanner;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class HelloSpring {
+
+	public void meue(ApplicationContext context) {
+		Scanner input = new Scanner(System.in);
+
+		while (true) {
+			System.out.println("*************");
+			System.out.println("   1.입력");
+			System.out.println("   2.출력");
+			System.out.println("   3.수정");
+			System.out.println("   4.삭제");
+			System.out.println("   5.끝");
+			System.out.println("*************");
+			System.out.print("입력번호 : ");
+
+			int number = input.nextInt();
+
+			if (number == 1) {
+
+			} else if (number == 1) {
+
+			} else if (number == 3) {
+
+			} else if (number == 4) {
+
+			} else if (number == 5) {
+				break;
+			} else {
+				System.out.println("잘못입력하셨습니다.");
+			}
+		}
+
+	}
+
+	public static void main(String[] args) {
+		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+		HelloSpring helloSpring = context.getBean("helloSpring",HelloSpring.class);
+		helloSpring.meue(context);
+		
+	
+	}
+}

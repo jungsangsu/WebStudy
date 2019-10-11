@@ -1,0 +1,14 @@
+package HackSa;
+
+import java.util.ArrayList;
+
+public class ManagementInputStudent implements Management {
+
+	private ArrayList<StudentDTO> list;
+	
+	@Override
+	public void execute(ArrayList<StudentDTO> list) {
+
+	}
+
+}

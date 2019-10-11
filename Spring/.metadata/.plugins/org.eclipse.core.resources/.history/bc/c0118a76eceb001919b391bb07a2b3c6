@@ -1,0 +1,8 @@
+package sample01;
+
+//공통모듈
+public class LoggingAdvice {
+	public void beforeTrace() {
+		System.out.println("before trace...");
+	}
+}

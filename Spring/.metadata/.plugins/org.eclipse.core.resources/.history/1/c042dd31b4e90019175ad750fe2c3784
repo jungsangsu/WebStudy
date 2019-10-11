@@ -1,0 +1,15 @@
+package sample05;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class SungJukInput implements SungJuk {
+
+	
+	
+	@Override
+	public void execute() {
+		
+	}
+
+}

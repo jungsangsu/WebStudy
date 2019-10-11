@@ -1,0 +1,13 @@
+package sample05;
+
+import java.util.ArrayList;
+
+public class SungJukDelete implements SungJuk {
+
+	@Override
+	public void execute(ArrayList<SungJukDTO2> list) {
+		
+	}
+
+
+}

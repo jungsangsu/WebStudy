@@ -1,0 +1,18 @@
+package sample05;
+
+import java.util.ArrayList;
+
+public class SungJukOutput implements SungJuk {
+
+	
+	
+	@Override
+	public void execute(ArrayList<SungJukDTO2> list) {
+
+		for (SungJukDTO2 sungJukDTO2 : list) {
+			System.out.println(sungJukDTO2.toString());
+		}
+	}
+
+	
+}

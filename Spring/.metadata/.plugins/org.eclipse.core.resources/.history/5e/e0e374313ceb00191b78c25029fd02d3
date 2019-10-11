@@ -1,0 +1,24 @@
+package HackSa;
+
+import java.util.ArrayList;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
+@Scope("prototype")
+@Component
+@ComponentScan("com.conf")
+public class ManagementInputStudent implements Management {
+
+	@Autowired
+	private ArrayList<StudentDTO> list;
+	
+	@Override
+	public void execute() {
+		list.add(new StudentDTO());
+		System.out.println(list.size());
+	}
+
+}

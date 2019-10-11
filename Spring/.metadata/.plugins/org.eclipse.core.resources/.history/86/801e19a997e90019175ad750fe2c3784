@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+	<!-- sample01 -->
+	<bean id="messageBeanImpl" class="sample01.MessageBeanImpl">
+		<constructor-arg>
+			<value>딸기</value>
+		</constructor-arg>
+		<property name="cost">
+			<value>5000</value>
+		</property>
+		<property name="qty" value="3" />
+	</bean>
+
+	<!-- sample02 -->
+	<bean id="calcAdd" class="sample02.CalcAdd">
+		<constructor-arg index="0" value="25" />
+		<constructor-arg index="1" value="36" />
+	</bean>
+
+	<bean id="calcMul" class="sample02.CalcMul">
+		<constructor-arg index="0" value="25" />
+		<constructor-arg index="1" value="36" />
+	</bean>
+	
+	<!-- sample03 -->
+	<bean id="sungjukDTO" class="sample03.SungJukDTO">
+		<constructor-arg value="홍길동"/>
+		<constructor-arg value="97"/>
+		<constructor-arg value="100"/>
+		<constructor-arg value="95"/>
+	</bean>
+
+
+	<bean id="sungjukimpl" class="sample03.SungJukImpl">
+		<constructor-arg>
+			<ref bean="sungjukDTO"/>
+		</constructor-arg>
+	</bean>
+
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

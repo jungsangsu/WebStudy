@@ -1,0 +1,16 @@
+package user.main;
+
+import java.util.Scanner;
+
+public class HelloSpring {
+	
+	public void meue() {
+		Scanner scan = new Scanner(System.in);
+		
+		
+	}
+	
+	public static void main(String[] args) {
+		
+	}
+}

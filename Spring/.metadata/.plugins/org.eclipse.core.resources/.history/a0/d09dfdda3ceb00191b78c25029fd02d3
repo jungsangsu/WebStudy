@@ -1,0 +1,11 @@
+package HackSa;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Management m = new ManagementInputStudent();
+
+		m.execute();
+	}
+
+}

@@ -1,0 +1,16 @@
+package HackSa;
+
+import java.util.ArrayList;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.ComponentScans;
+
+@ComponentScan("com.conf")
+public class ManagementSortStudent implements Management {
+
+	@Override
+	public void execute(ApplicationContext context) {
+
+	}
+
+}

@@ -1,0 +1,18 @@
+package sample05;
+
+import java.util.ArrayList;
+
+public class SungJukModify implements SungJuk {
+
+	
+	private SungJukDTO2 sungJukDTO2;
+	private ArrayList<SungJukDTO2> arraylist;
+	
+	@Override
+	public void execute() {
+		
+	}
+
+
+
+}

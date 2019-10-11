@@ -1,0 +1,25 @@
+package HackSa;
+
+import java.util.ArrayList;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+@ComponentScan("com.conf")
+public class Main {
+
+	@Autowired
+	private ArrayList<StudentDTO> list;
+	
+	public static void main(String[] args) {
+		
+		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+		Main m = new Main();
+		m.list.add(new StudentDTO());
+		System.out.println(m.list.size());
+		
+	}
+
+}

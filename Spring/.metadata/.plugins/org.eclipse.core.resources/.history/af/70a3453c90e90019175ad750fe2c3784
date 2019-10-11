@@ -1,0 +1,32 @@
+package sample03;
+
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
+
+@RequiredArgsConstructor
+public class SungJukImpl implements SungJuk{
+
+	@NonNull
+	private SungJukDTO sungjukDTO;
+	
+	@Override
+	public void calcTot() {
+		
+	}
+
+	@Override
+	public void calcAvg() {
+		
+	}
+
+	@Override
+	public void display() {
+		System.out.println("이름\t국어\t영어\t수학\t총점\t평균\n"+this.name+"\t"+this.kor+"\t"+this.eng+"\t"+this.math+"\t"+this.total+"\t"+this.avg);
+	}
+
+	@Override
+	public void modify() {
+		
+	}
+	
+}

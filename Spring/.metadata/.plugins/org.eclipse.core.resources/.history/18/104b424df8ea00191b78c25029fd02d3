@@ -1,0 +1,17 @@
+package sample04;
+
+public class MessageBeanImpl implements MessageBean{
+
+	private String name;
+	private String phone;
+	private Outputter outputter;
+	
+	
+	public MessageBeanImpl(String name) {
+		System.out.println();
+		this.name = name;
+	}
+	
+	
+	
+}

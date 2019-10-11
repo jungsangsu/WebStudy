@@ -1,0 +1,26 @@
+package sample03;
+
+public class SungJukImpl implements SungJuk{
+
+	@Override
+	public void calcTot() {
+		
+	}
+
+	@Override
+	public void calcAvg() {
+		
+	}
+
+	@Override
+	public void display() {
+		
+	}
+
+	@Override
+	public void modify() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+}

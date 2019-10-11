@@ -1,0 +1,18 @@
+package sample05;
+
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.stereotype.Component;
+
+@ComponentScan("com.conf")
+@Component
+public class SungJukInput implements SungJuk {
+
+	private SungJukDTO2 dto2;
+	
+	@Override
+	public SungJukDTO2 execute() {
+		
+		return null;
+	}
+
+}

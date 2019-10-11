@@ -1,0 +1,32 @@
+package sample03;
+
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
+
+@RequiredArgsConstructor
+public class SungJukImpl implements SungJuk{
+
+	@NonNull
+	private SungJukDTO sungjukDTO;
+	
+	@Override
+	public void calcTot() {
+		
+	}
+
+	@Override
+	public void calcAvg() {
+		
+	}
+
+	@Override
+	public void display() {
+		
+	}
+
+	@Override
+	public void modify() {
+		
+	}
+	
+}

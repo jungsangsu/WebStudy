@@ -1,0 +1,17 @@
+package HackSa;
+
+import java.util.ArrayList;
+
+import org.springframework.context.annotation.ComponentScan;
+
+@ComponentScan("com.conf")
+public class Main {
+	
+	private static ArrayList<StudentDTO> list;
+	public static void main(String[] args) {
+		list.add(new StudentDTO());
+		
+		System.out.println(list.size());
+	}
+
+}

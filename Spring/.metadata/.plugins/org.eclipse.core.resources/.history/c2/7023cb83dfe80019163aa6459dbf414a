@@ -1,0 +1,24 @@
+package sample05;
+
+public class SungJukImpl implements SungJuk{
+
+	
+	private int kor;
+	private int eng;
+	private int math;
+	private int total;
+	private double avg;
+	
+	@Override
+	public void calc(int kor, int eng, int math) {
+		this.kor = kor;
+		this.eng = eng;
+		this.math = math;
+	}
+
+	@Override
+	public void display() {
+		
+	}
+	
+}

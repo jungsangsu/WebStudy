@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-4.3.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+	<!-- connection Pool & DataSource -->
+	<!-- <bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource"> 
+		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/> 
+		<property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"/> <property 
+		name="username" value="java"/> <property name="password" value="tkdtn"/> 
+		<property name="maxTotal" value="20"/> <property name="maxIdle" value="3"/> 
+		</bean> -->
+
+	<bean id="dataSource"
+		class="org.apache.commons.dbcp2.BasicDataSource"
+		p:driverClassName="oracle.jdbc.driver.OracleDriver"
+		p:url="jdbc:oracle:thin:@localhost:1521:xe" p:username="java"
+		p:password="tkdtn" p:maxTotal="20" p:maxIdle="3" />
+
+	<!-- main -->
+	<bean id="helloSpring" class="user.main.HelloSpring" />
+
+	<!-- user -->
+	<bean id="userDTO" class="user.bean.UserDTO" scope="prototype"></bean>
+
+	<bean id="userInsertService" class="user.action.UserInsertService"
+		scope="prototype">
+		<property name="userDTO" ref="userDTO" />
+	</bean>
+
+</beans>

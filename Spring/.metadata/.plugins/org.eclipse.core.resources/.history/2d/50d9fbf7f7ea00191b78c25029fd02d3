@@ -1,0 +1,5 @@
+ackage sample04;
+
+public interface MessageBeanImpl {
+
+}

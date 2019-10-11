@@ -1,0 +1,11 @@
+package sample01;
+
+public class HelloSpring {
+	public static void main(String[] args) {
+		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+		MessageBean messageBean = (MessageBean)context.getBean("messageBeanImpl");
+		messageBean.sayHello();
+		messageBean.sayHello("¼ö¹Ú", 20000);
+		messageBean.sayHello("Åä¸¶Åä", 3500, 7);
+	}
+}

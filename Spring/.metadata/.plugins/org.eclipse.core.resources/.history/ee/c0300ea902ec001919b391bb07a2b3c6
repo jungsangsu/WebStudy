@@ -1,0 +1,12 @@
+package user.dao;
+
+import user.bean.UserDTO;
+
+public class UserDAOImpl implements UserDAO {
+
+	@Override
+	public void userWrite(UserDTO userDTO) {
+		
+	}
+	
+}

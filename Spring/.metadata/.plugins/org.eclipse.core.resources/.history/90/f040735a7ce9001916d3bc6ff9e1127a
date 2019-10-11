@@ -1,0 +1,34 @@
+package sample01;
+
+import lombok.Data;
+import lombok.RequiredArgsConstructor;
+
+@RequiredArgsConstructor
+public class MessageBeanImpl implements MessageBean {
+
+	private String fruit;
+	private int cost,qty;
+	
+	//fruit 생성자 injection
+	public MessageBeanImpl(String fruit) {
+		this.fruit = fruit;
+	}
+	
+	
+	@Override
+	public void sayHello() {
+
+	}
+
+
+	@Override
+	public void sayHello(String fruit, int cost) {
+
+	}
+
+	@Override
+	public void sayHello(String fruit, int cost, int qty) {
+
+	}
+
+}

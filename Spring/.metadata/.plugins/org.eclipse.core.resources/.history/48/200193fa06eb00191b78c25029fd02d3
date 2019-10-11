@@ -1,0 +1,17 @@
+package sample05;
+
+import java.util.ArrayList;
+
+import org.springframework.stereotype.Component;
+
+public class SungJukModify implements SungJuk {
+
+	@Override
+	public void execute(ArrayList<SungJukDTO2> list) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+}

@@ -1,0 +1,13 @@
+package HackSa;
+
+import org.springframework.context.ApplicationContext;
+
+public class ManagementModifyStudent implements Management {
+
+	@Override
+	public void execute(ApplicationContext context) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

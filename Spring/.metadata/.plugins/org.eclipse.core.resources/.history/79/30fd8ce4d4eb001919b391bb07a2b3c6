@@ -1,0 +1,7 @@
+package sample01;
+
+public class LoggingAdvice {
+	public void beforeTrace() {
+		System.out.println("before trace...");
+	}
+}

@@ -1,0 +1,17 @@
+package com.conf;
+
+import java.util.ArrayList;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import HackSa.StudentDTO;
+
+@Configuration
+public class Instance {
+	
+	@Bean(name="list")
+	public ArrayList<StudentDTO> list(){
+		return new ArrayList<StudentDTO>();
+	}
+}

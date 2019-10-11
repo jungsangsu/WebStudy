@@ -1,0 +1,18 @@
+package sample03;
+
+
+import lombok.RequiredArgsConstructor;
+
+@RequiredArgsConstructor
+public class SungJukDTO {
+	
+	
+	@NonNull
+	private String name;
+	@NonNull
+	private int kor,eng,math;
+	private int total;
+	private double avg;
+	
+	
+}

@@ -1,0 +1,30 @@
+package sample01;
+
+import org.springframework.stereotype.Component;
+
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+
+@Component
+public class MessageBeanImpl implements MessageBean {
+
+	private String fruit;
+	private int cost, qty;
+
+	@Override
+	public void sayHello() {
+		System.out.println(fruit + "\t" + cost + "\t" + qty);
+	}
+
+	@Override
+	public void sayHello(String fruit, int cost) {
+		System.out.println(fruit + "\t" + cost + "\t" + qty);
+	}
+
+	@Override
+	public void sayHello(String fruit, int cost, int qty) {
+		System.out.println(fruit + "\t" + cost + "\t" + qty);
+	}
+
+}

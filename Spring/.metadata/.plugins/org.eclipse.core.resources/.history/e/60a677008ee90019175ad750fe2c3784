@@ -1,0 +1,10 @@
+package sample03;
+
+public class CalcMul implements Calc {
+
+	@Override
+	public void calculate() {
+
+	}
+
+}

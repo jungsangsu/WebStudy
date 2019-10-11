@@ -1,0 +1,19 @@
+package sample02;
+
+import org.springframework.stereotype.Component;
+
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
+
+@Component
+public class CalcAdd implements Calc {
+
+	private int x,y;
+	
+	
+	@Override
+	public void calculate() {
+		System.out.println(this.x+"+"+this.y+"="+(this.x+this.y));
+	}
+
+}

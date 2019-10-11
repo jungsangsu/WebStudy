@@ -1,0 +1,15 @@
+package sample02;
+
+import lombok.NonNull;
+
+public class CalcAdd implements Calc {
+
+	@NonNull
+	private int x,y;
+	
+	@Override
+	public void calculate() {
+
+	}
+
+}

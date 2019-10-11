@@ -1,0 +1,13 @@
+package HackSa;
+
+import java.util.ArrayList;
+
+public class ManagementSortStudent implements Management {
+
+	@Override
+	public void execute(ArrayList<StudentDTO> list) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

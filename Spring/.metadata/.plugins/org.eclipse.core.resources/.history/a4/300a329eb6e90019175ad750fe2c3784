@@ -1,0 +1,38 @@
+package sample05;
+
+import java.util.Scanner;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.stereotype.Component;
+
+@ComponentScan("com.conf")
+@Component
+public class SungJukInput implements SungJuk {
+	
+	private SungJukDTO2 dto2;
+	
+	@Override
+	public SungJukDTO2 execute() {
+		Scanner input = new Scanner(System.in);
+		
+		System.out.print("이름 입력 : ");
+		dto2.setName(input.next());
+		
+		System.out.print("국어 입력 : ");
+		dto2.setKor(input.nextInt());
+		
+		System.out.print("영어 입력 : ");
+		dto2.setEng(input.nextInt());
+		
+		System.out.print("수학 입력 : ");
+		dto2.setMath(input.nextInt());
+		
+		dto2.setTot(dto2.getKor()+dto2.getEng()+dto2.getMath());
+		dto2.setAvg(dto2.getTot()/3);
+		
+		
+		return dto2;
+	}
+
+}

@@ -1,0 +1,5 @@
+package HackSa;
+
+public interface Management {
+	public void execute();
+}

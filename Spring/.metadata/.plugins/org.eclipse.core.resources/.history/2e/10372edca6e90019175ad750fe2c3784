@@ -1,0 +1,7 @@
+package com.conf;
+
+public class Instance {
+	public SungJukImpl getSungJukImpl() {
+		return new SungJukImpl();
+	}
+}

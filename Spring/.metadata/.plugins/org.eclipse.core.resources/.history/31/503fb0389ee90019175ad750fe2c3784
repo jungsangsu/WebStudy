@@ -1,0 +1,22 @@
+package sample03;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import sample02.Calc;
+
+public class HelloSpring {
+	public static void main(String[] args) {
+		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+		SungJukImpl sungjukImpl = context.getBean("sungjukimpl",SungJukImpl.class);
+		
+		sungjukImpl.calcTot();
+		sungjukImpl.calcAvg();
+		sungjukImpl.display();
+		
+		sungjukImpl.modify();
+		sungjukImpl.calcTot();
+		sungjukImpl.calcAvg();
+		sungjukImpl.display();
+	}
+}

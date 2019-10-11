@@ -1,0 +1,18 @@
+package HackSa;
+
+import java.util.ArrayList;
+
+import org.springframework.context.ApplicationContext;
+
+
+
+public class ManagementOutputStudent implements Management{
+
+	
+	
+	@Override
+	public void execute(ApplicationContext context) {
+		
+	}
+
+}

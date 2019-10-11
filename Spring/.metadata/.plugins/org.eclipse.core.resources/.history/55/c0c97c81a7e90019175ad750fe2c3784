@@ -1,0 +1,18 @@
+package com.conf;
+
+import org.springframework.context.annotation.Bean;
+
+import sample03.SungJukImpl;
+
+public class Instance {
+	
+	@Bean(name="sungJukImpl") //리턴되서 나오는 값을 생성하고싶은경우 Bean | 이런 이름으로
+	public SungJukImpl getSungJukImpl() {
+		return new SungJukImpl();
+	}
+	
+	@Bean(name="sungJukDTO")
+	public SungJukDTO getSungJukDTO() {
+		return new SungJukDTO();
+	}
+}

@@ -1,0 +1,23 @@
+package sample04;
+
+public class FileOutputter implements Outputter {
+	private String filePath, fileName;
+
+
+	public void setFilePath(String filePath) {
+		System.out.println("setFilePath 메소드");
+		this.filePath = filePath;
+	}
+
+	public void setFileName(String fileName) {
+		System.out.println("setFileName 메소드");
+		this.fileName = fileName;
+	}
+	
+	
+	@Override
+	public void output(String message) {
+		
+	}
+	
+}

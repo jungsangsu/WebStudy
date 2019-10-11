@@ -1,0 +1,37 @@
+package com.conf;
+
+import java.util.ArrayList;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import sample03.SungJukDTO;
+import sample03.SungJukImpl;
+
+@Configuration
+public class Instance {
+	
+	@Bean(name="sungJukImpl")
+	public SungJukImpl getSungJukImpl(){
+		return new SungJukImpl();
+	}
+	
+	@Bean(name="sungJukDTO")
+	public SungJukDTO getSungJukDTO(){
+		return new SungJukDTO();
+	}
+	
+	@Bean(name="list")
+	public ArrayList<SungJukDTO> getSungJukDTOList(){
+		return new ArrayList<SungJukDTO>();
+	}
+}
+
+
+
+
+
+
+
+
+

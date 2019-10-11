@@ -1,0 +1,12 @@
+package sample04;
+
+public class FileOutputter implements Outputter {
+	private String filePath, fileName;
+
+	@Override
+	public void output(String message) {
+		
+	}
+	
+	
+}

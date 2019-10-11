@@ -1,0 +1,13 @@
+package com.conf;
+
+import org.springframework.context.annotation.Bean;
+
+import sample03.SungJukImpl;
+
+public class Instance {
+	
+	@Bean
+	public SungJukImpl getSungJukImpl() {
+		return new SungJukImpl();
+	}
+}

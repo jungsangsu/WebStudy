@@ -1,0 +1,30 @@
+package sample05;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class SungJukModify implements SungJuk {
+
+	private SungJukDTO2 sungJukDTO2;
+	private ArrayList<SungJukDTO2> arraylist;
+	
+	@Override
+	public void execute() {
+		Scanner input = new Scanner(System.in);
+		System.out.println("수정할 이름을 입력하세요");
+		
+		String name = input.next();
+		if(arraylist.size()==0) {
+			System.out.println("수정할 정보가 없습니다.");
+		}else {
+			for (SungJukDTO2 sungJukDTO2 : arraylist) {
+				if(sungJukDTO2.getName().equals(name)) {
+					
+				}
+			}
+		}
+	}
+
+
+
+}

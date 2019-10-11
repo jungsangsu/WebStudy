@@ -1,0 +1,43 @@
+package sample05;
+
+import java.util.Scanner;
+
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
+@Component("sJukIm")
+@Scope("prototype")
+public class SungJukImpl implements SungJuk{
+
+	Scanner input = new Scanner(System.in);
+	
+	private String name;
+	private int kor;
+	private int eng;
+	private int math;
+	private int total;
+	private double avg;
+	
+	
+	@Override
+	public void calc(String name,int kor, int eng, int math) {
+		this.name = name;
+		this.kor = kor;
+		this.eng = eng;
+		this.math = math;
+		this.total = kor+eng+math;
+		this.avg = (kor+eng+math)/3;
+	}
+
+	@Override
+	public void display() {
+		System.out.println(this.toString());
+	}
+
+	@Override
+	public String toString() {
+		return "이름\t국어\t영어\t수학\t총점\t평균\n"+this.name+"\t"+this.kor+"\t"+this.eng+"\t"+this.math+"\t"+this.total+"\t"+this.avg;
+	}
+	
+	
+}

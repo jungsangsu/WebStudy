@@ -1,0 +1,23 @@
+package sample03;
+
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+
+@RequiredArgsConstructor
+public class SungJukDTO {
+	
+	
+	@NonNull @Setter
+	private String name;
+	@Setter
+	private int kor;
+	@Setter
+	private int eng;
+	@Setter
+	private int math;
+	@Setter
+	private int total;
+	@Setter
+	private double avg;
+}
